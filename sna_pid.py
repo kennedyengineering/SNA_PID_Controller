@@ -6,7 +6,7 @@ import numpy as np
 # The Single Neuron Adaptive PID controller
 # v1: u_k approximation
 class SNA_PID_v1:
-    def __init__(self, K=5, LRp=0.5, LRi=0.5, LRd=0.5):
+    def __init__(self, K=10, LRp=0.5, LRi=0.5, LRd=0.5):
         # Initialize the system
         self.K = K
 
@@ -42,7 +42,7 @@ class SNA_PID_v1:
 # The Single Neuron Adaptive PID controller
 # v2: 2*e_k[0] - e_k[1] input term
 class SNA_PID_v2:
-    def __init__(self, K=5, LRp=0.5, LRi=0.5, LRd=0.5):
+    def __init__(self, K=10, LRp=0.5, LRi=0.5, LRd=0.5):
         # Initialize the system
         self.K = K
 
