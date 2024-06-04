@@ -6,6 +6,13 @@
 2. Activate virtual environment `source venv/bin/activate`
 3. Install dependencies `pip3 install -r requirements.txt`
 
+## System
+The system under evaluation is defined by the difference function:
+
+`y(k)= 0.6*y(k) + 0.01*u(k)`
+
+`y(k)` is the system output and `u(k)` is the input to the system
+
 ## Algorithms
 ### Incremental PID
 Your regular PID algorithm, tuned using the Ziegler-Nichols method
@@ -41,7 +48,25 @@ See all the PID algorithms home in on a stationary setpoint
 
 See all the PID algorithms home in on a moving setpoint
 
-
 Halfway through the simulation the plant dynamics change allowing the adaptive nature of SNA-PID to be visualized
 
 ## Results
+### Incremental PID Results
+![image](plots/pid_0.png)
+![image](plots/pid_1.png)
+
+### Single Neuron Adaptive PID v1 Results
+![image](plots/sna_v1_0.png)
+![image](plots/sna_v1_1.png)
+
+### Single Neuron Adaptive PID v2 Results
+![image](plots/sna_v2_0.png)
+![image](plots/sna_v2_1.png)
+
+### Compare All Results
+![image](plots/all_0.png)
+![image](plots/all_1.png)
+
+### Compare All Dyanmic Results
+![image](plots/all_dynamic_0.png)
+![image](plots/all_dynamic_1.png)
