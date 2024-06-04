@@ -20,6 +20,7 @@ def run_simulation(controller):
 
     x = [0]
     y = [plant.y_k]
+    s = [0]
 
     e = 0
 
@@ -31,12 +32,13 @@ def run_simulation(controller):
 
         x.append(i+1)
         y.append(plant.update(signal))
+        s.append(signal)
 
-    return x, y, e
+    return x, y, s, e
 
-x, y0, e0 = run_simulation(controller0)
-_, y1, e1 = run_simulation(controller1)
-_, y2, e2 = run_simulation(controller2)
+x, y0, s0, e0 = run_simulation(controller0)
+_, y1, s1, e1 = run_simulation(controller1)
+_, y2, s2, e2 = run_simulation(controller2)
 
 print("PID Total Error:", e0)
 print("SNA PID v1 Total Error:", e1)
@@ -51,6 +53,15 @@ plt.plot(x, y1, label="Actual - SNA PID v1")
 plt.plot(x, y2, label="Actual - SNA PID v2")
 plt.plot([0,300], [1.0, 1.0], label="Desired")
 plt.ylabel('Fluid level')
+plt.xlabel('Time units')
+plt.title("PID Controller Comparison")
+plt.legend()
+plt.show()
+
+plt.plot(x, s0, label="PID")
+plt.plot(x, s1, label="SNA PID v1")
+plt.plot(x, s2, label="SNA PID v2")
+plt.ylabel('Flow rate')
 plt.xlabel('Time units')
 plt.title("PID Controller Comparison")
 plt.legend()
