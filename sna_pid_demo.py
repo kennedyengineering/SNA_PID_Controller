@@ -4,10 +4,10 @@
 import matplotlib.pyplot as plt
 
 from system import System
-from sna_pid import SNA_PID_v0
+from sna_pid import SNA_PID_v1
 
 plant = System()
-controller = SNA_PID_v0()
+controller = SNA_PID_v1()
 
 time_steps = 300
 
@@ -30,6 +30,6 @@ plt.plot(x, y, label="Actual")
 plt.plot([0,300], [r_k, r_k], label="Desired")
 plt.ylabel('Fluid level')
 plt.xlabel('Time units')
-plt.title("Single Neuron Adaptive PID Controller v0")
+plt.title("Single Neuron Adaptive PID Controller v1")
 plt.legend()
 plt.show()
