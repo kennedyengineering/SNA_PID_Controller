@@ -16,13 +16,20 @@ r_k = 1.0
 x = [0]
 y = [plant.y_k]
 s = [0]
+
+e = 0
+
 for i in range(time_steps):
+
+    e += r_k - y[-1]
 
     signal = controller.update(r_k, y[-1])
 
     x.append(i+1)
     y.append(plant.update(signal))
     s.append(signal)
+
+print("SNA PID v1 Total Error:", e)
 
 ax = plt.gca()
 ax.set_xlim([0, 300])
