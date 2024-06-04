@@ -1,5 +1,5 @@
 # SNA PID Project
-# sna_pid_demo.py
+# sna_pid_v1_demo.py
 
 import matplotlib.pyplot as plt
 
