@@ -48,7 +48,7 @@ See all the PID algorithms home in on a stationary setpoint
 
 See all the PID algorithms home in on a moving setpoint
 
-Halfway through the simulation the plant dynamics change allowing the adaptive nature of SNA-PID to be visualized
+Halfway through the simulation the system dynamics change allowing the adaptive nature of SNA-PID to be visualized
 
 ## Results
 ### Incremental PID Results
