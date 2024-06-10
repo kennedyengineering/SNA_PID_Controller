@@ -30,7 +30,7 @@ def run_simulation(controller):
             # Cut controller contribution in half
             plant.u_k_coef = 0.005
 
-        e += r[-1] - y[-1]
+        e += abs(r[-1] - y[-1])
 
         signal = controller.update(r[-1], y[-1])
 

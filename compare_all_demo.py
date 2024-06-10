@@ -26,7 +26,7 @@ def run_simulation(controller):
 
     for i in range(time_steps):
 
-        e += r_k - y[-1]
+        e += abs(r_k - y[-1])
 
         signal = controller.update(r_k, y[-1])
 
